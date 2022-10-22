@@ -9,8 +9,7 @@ import javax.swing.JPanel;
 
 public class MyFrame extends JFrame implements KeyListener{
 
-    JLabel label;
-    JPanel panel;
+    JPanel label;
 
     public MyFrame(){
 
@@ -20,19 +19,14 @@ public class MyFrame extends JFrame implements KeyListener{
     this.setLayout(null);
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     this.addKeyListener(this);
+    this.getContentPane().setBackground(Color.BLACK);
 
-    panel = new JPanel();
-    panel.setBounds(0,0,500,500);
-    panel.setBackground(Color.BLACK);
-
-    label = new JLabel();
-    label.setBounds(0,0,100,100);
+    label = new JPanel();
+    label.setBounds(250,250,100,100);
     label.setBackground(Color.RED);
     label.setOpaque(true);
-
-    panel.add(label);
-
-    this.add(panel);
+   
+    this.add(label);
     this.setVisible(true);
 
     }
@@ -41,16 +35,24 @@ public class MyFrame extends JFrame implements KeyListener{
     public void keyTyped(KeyEvent e){
         switch(e.getKeyChar()){
             case 'a':
-            label.setLocation(label.getX()-10,label.getY());
+            for (int i = 0; i<50; i++){
+                label.setLocation(label.getX()-1,label.getY());
+            }
             break;
             case 'w':
-            label.setLocation(label.getX(), label.getY()-10);
+            for (int i = 0; i<50; i++){
+            label.setLocation(label.getX(), label.getY()-1);
+            }
             break;
             case 's':
-            label.setLocation(label.getX(),label.getY()+10);
+            for (int i = 0; i<50; i++){
+            label.setLocation(label.getX(),label.getY()+1);
+            }
             break;
             case 'd':
-            label.setLocation(label.getX()+10, label.getY());
+            for (int i = 0; i<50; i++){
+            label.setLocation(label.getX()+1, label.getY());
+            }
             break;
         }
     }
@@ -58,16 +60,24 @@ public class MyFrame extends JFrame implements KeyListener{
     public void keyPressed(KeyEvent e){
         switch(e.getKeyChar()){
             case 'a':
-            label.setLocation(label.getX()-10,label.getY());
+            for (int i = 0; i<50; i++){
+                label.setLocation(label.getX()-1,label.getY());
+            }
             break;
             case 'w':
-            label.setLocation(label.getX(), label.getY()-10);
+            for (int i = 0; i<50; i++){
+            label.setLocation(label.getX(), label.getY()-1);
+            }
             break;
             case 's':
-            label.setLocation(label.getX()-10,label.getY()+10);
+            for (int i = 0; i<50; i++){
+            label.setLocation(label.getX(),label.getY()+1);
+            }
             break;
             case 'd':
-            label.setLocation(label.getX()+10, label.getY());
+            for (int i = 0; i<50; i++){
+            label.setLocation(label.getX()+1, label.getY());
+            }
             break;
         }
     }

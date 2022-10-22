@@ -9,6 +9,7 @@ import java.awt.Graphics2D;
 import java.awt.Color;
 import javax.swing.JPanel;
 import java.awt.Font;
+import java.awt.Dimension;
 
 public class HomeScreen extends JPanel implements ActionListener{
 
@@ -20,13 +21,15 @@ public class HomeScreen extends JPanel implements ActionListener{
     
     start.setBackground(Color.BLACK);
     start.setForeground(Color.RED);
-    start.setBounds(250,450,200,200);
+    Dimension size = start.getPreferredSize();
+    start.setBounds(210,200,size.width,size.height);
     start.addActionListener(this);
 
-    title.setBounds(250,50,300,250);
+    title.setBounds(125,-100,500,350);
     title.setFont(new java.awt.Font("", 0, 50));
     title.setForeground(Color.RED);
 
+    panel.setLayout(null);
     panel.setBounds(0,0,500,500);
     panel.setBackground(Color.black);
     panel.add(title);
