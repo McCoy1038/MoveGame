@@ -5,12 +5,15 @@ import java.awt.*;
 import java.awt.Color;
 import java.awt.event.*;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class MyFrame extends JFrame implements KeyListener{
 
     JLabel label;
+    JPanel panel;
 
     public MyFrame(){
+
     this.setBounds(500,100,500,500);
     this.setTitle("MoveGame");
     this.setResizable(false);
@@ -18,12 +21,18 @@ public class MyFrame extends JFrame implements KeyListener{
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     this.addKeyListener(this);
 
+    panel = new JPanel();
+    panel.setBounds(0,0,500,500);
+    panel.setBackground(Color.BLACK);
+
     label = new JLabel();
     label.setBounds(0,0,100,100);
-    label.setBackground(Color.magenta);
+    label.setBackground(Color.RED);
     label.setOpaque(true);
 
-    this.add(label);
+    panel.add(label);
+
+    this.add(panel);
     this.setVisible(true);
 
     }
@@ -38,7 +47,7 @@ public class MyFrame extends JFrame implements KeyListener{
             label.setLocation(label.getX(), label.getY()-10);
             break;
             case 's':
-            label.setLocation(label.getX()-10,label.getY()+10);
+            label.setLocation(label.getX(),label.getY()+10);
             break;
             case 'd':
             label.setLocation(label.getX()+10, label.getY());
