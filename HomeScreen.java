@@ -13,6 +13,8 @@ import java.awt.Dimension;
 
 public class HomeScreen extends JPanel implements ActionListener{
 
+    public boolean running;
+
     public HomeScreen(){
     JFrame frame = new JFrame();
     JPanel panel = new JPanel();
@@ -46,6 +48,7 @@ public class HomeScreen extends JPanel implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent e){
-     new MyFrame();
+        running = true;
+        new MyFrame(this);
     }
 }
